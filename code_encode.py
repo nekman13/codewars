@@ -37,19 +37,21 @@
 #     return s.translate(t)
 #
 # print(f"{encode('print')} - {decode('pr3nt')}")
-symbols = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
-symbols_reverse = 'яюэьыъщшчцхфутсрпонмлкйизжёедгвба'
-nums = ''
+symbols = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+symbols_reverse = "яюэьыъщшчцхфутсрпонмлкйизжёедгвба"
+nums = ""
 
 translation_table = str.maketrans(symbols, symbols_reverse)
 translation_table_2 = str.maketrans(symbols_reverse, symbols)
 
+
 def encode(s):
     return s.translate(translation_table)
+
 
 def decode(s):
     return s.translate(translation_table_2)
 
-str = input('Введите слово').lower()
-print(encode(str), '-', decode(encode(str)))
 
+str = input("Введите слово").lower()
+print(encode(str), "-", decode(encode(str)))
