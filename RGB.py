@@ -1,12 +1,9 @@
 def rgb(r, g, b):
-    return(''.join([encode(r), encode(g), encode(b)]))
+    return ''.join([encode(r), encode(g), encode(b)])
 
 
 def encode(num):
-    if num < 0:
-        num = 0
-    elif num > 255:
-        num = 255
+    formatted_num(num)
     list_code = ['A', 'B', 'C', 'D', 'E', 'F']
     res = ''
     while num > 0:
@@ -18,3 +15,11 @@ def encode(num):
         res = str(mod) + res
         num = num // 16
     return res
+
+
+def formatted_num(num_source):
+    if num_source < 0:
+        num_source = 0
+    elif num_source > 255:
+        num_source = 255
+    return num_source
