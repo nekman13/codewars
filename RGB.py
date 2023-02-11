@@ -3,7 +3,7 @@ def rgb(r, g, b):
 
 
 def encode(num):
-    formatted_num(num)
+    num = formatted_num(num)
     list_code = ['A', 'B', 'C', 'D', 'E', 'F']
     res = ''
     while num > 0:
@@ -14,6 +14,10 @@ def encode(num):
             mod = str(mod)
         res = str(mod) + res
         num = num // 16
+    if len(res) == 0:
+        res = '00' + res
+    elif len(res) == 1:
+        res = '0' + res
     return res
 
 
@@ -23,3 +27,6 @@ def formatted_num(num_source):
     elif num_source > 255:
         num_source = 255
     return num_source
+
+
+print(rgb(-20, 275, 125))
